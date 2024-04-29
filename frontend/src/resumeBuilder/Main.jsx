@@ -8,6 +8,7 @@ import Mydetails from "./Mydetails";
 import Aboutme from "./Aboutme";
 import SkillsAndProf from "./SkillsAndProf";
 import WorkExp from "./WorkExp";
+import ResumeSelection from "./ResumeSelection";
 
 function Main() {
   return (
