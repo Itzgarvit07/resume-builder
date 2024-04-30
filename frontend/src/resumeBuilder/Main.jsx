@@ -1,4 +1,3 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import Header from "./Header";
 import "./resumeBuilder.css";
@@ -8,29 +7,39 @@ import Mydetails from "./Mydetails";
 import Aboutme from "./Aboutme";
 import SkillsAndProf from "./SkillsAndProf";
 import WorkExp from "./WorkExp";
-import ResumeSelection from "./ResumeSelection";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 function Main() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+        <>
+          <Header /> <Home />
+        </>
+      ),
+    },
+    {
+      path: "/new",
+      element: <ResumeWrapper />,
+      children: [
+        { path: "", element: <NewResume /> },
+        { path: "my-details", element: <Mydetails /> },
+        { path: "about-me", element: <Aboutme /> },
+        { path: "skills-prof", element: <SkillsAndProf /> },
+        { path: "work-exp", element: <WorkExp /> },
+      ],
+    },
+    {
+      path: "*",
+      element: "page not found",
+    },
+  ]);
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          element={
-            <>
-              <Header /> <Home />
-            </>
-          }
-          path="/"
-        />
-        <Route element={<ResumeWrapper/>} path="/new" >
-          <Route index element={<NewResume/> }/>
-          <Route element={<Mydetails/>} path="my-details"/>
-          <Route element={<Aboutme/>} path="about-me" />
-          <Route element={<SkillsAndProf/>} path="skills-prof"/>
-          <Route element={<WorkExp/>} path="work-exp" />  
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <>
+      <RouterProvider router={router} />
+    </>
   );
 }
 

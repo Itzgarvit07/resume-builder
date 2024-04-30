@@ -6,7 +6,7 @@ function Home() {
   return (
     <main className="px-10">
       <div className="createNew">
-        <Link to="/new" className="text-green-500 inline-flex flex-col items-center border-2 border-green-500 p-2 rounded-md hover:bg-green-500 hover:text-white"><AddCircleOutlineIcon /> Add New Resume</Link>
+        <Link to="/new" className="py-6 inline-flex flex-col items-center border-2 border-gray-500 p-2 rounded-md hover:bg-gray-900 hover:text-white"><AddCircleOutlineIcon /> <span className=" font-semibold">Add New Resume</span> </Link>
       </div>
     </main>
   );
