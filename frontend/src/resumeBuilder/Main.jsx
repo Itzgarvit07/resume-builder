@@ -8,8 +8,31 @@ import Aboutme from "./Aboutme";
 import SkillsAndProf from "./SkillsAndProf";
 import WorkExp from "./WorkExp";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-
+import { createContext,useEffect,useState,useContext } from "react";
+export const inputField = createContext()
 function Main() {
+const [name,setName] = useState("")
+const [role,setRole] = useState("")
+
+const [totalExp,setTotalExp] = useState("")
+const [message,setMessage] = useState("")
+const [image,setImage] = useState("")
+
+const [input,setInput] = useState([""]);
+
+const [formData, setFormData] = useState({
+  clientDescription: "",
+  country: "",
+  projectName: "",
+  roleWork: "",
+  startDate: "",
+  endDate: "",
+  businessSolution: "",
+  technologyStack: "",
+  projectResponsibility: "",
+});  
+
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -38,7 +61,9 @@ function Main() {
 
   return (
     <>
+    <inputField.Provider value={{name,setName,role,setRole,totalExp,setTotalExp,message,setMessage,image,setImage,formData,setFormData,input,setInput}}>
       <RouterProvider router={router} />
+      </inputField.Provider>
     </>
   );
 }

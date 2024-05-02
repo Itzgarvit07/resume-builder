@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import PersonIcon from "@mui/icons-material/Person";
+import { inputField } from "./Main";
 
 function Mydetails() {
-  const [image, setImage] = useState(null);
+
+  const {name,setName,role,setRole,totalExp,setTotalExp,image,setImage} = useContext(inputField)
+
+  // const [image, setImage] = useState(null);
   const [fileName, setFileName] = useState("No selected file");
 
   return (
@@ -47,10 +51,15 @@ function Mydetails() {
           <div className="flex gap-[4rem]">
             <label htmlFor="">Name</label>
             <input
+           
               type="text"
               name=""
               id=""
               className="border-[2px] border-solid border-gray-300 outline-none"
+              value={name}
+              onChange={(e)=>{
+setName(e.target.value)
+              }}
             />
           </div>
           <div className="flex gap-[4.7rem]">
@@ -59,18 +68,28 @@ function Mydetails() {
             <input
               type="text"
               placeholder="Add Role"
+             
               name=""
               id=""
               className="border-[2px] border-solid border-gray-300 outline-none w-[6rem] rounded-2xl text-[14px] p-1 pl-2"
+              value={role}
+              onChange={(e)=>{
+setRole(e.target.value)
+              }}
             />
           </div>
           <div className="flex gap-[2.5rem]">
             <label htmlFor="">Total Exp:</label>
             <input
+           
               type="text"
               name=""
               id=""
               className="border-[2px] border-solid border-gray-300 outline-none w-[6rem] rounded-lg"
+              value={totalExp}
+              onChange={(e)=>{
+setTotalExp(e.target.value)
+              }}
             />
             <label htmlFor="" className="text-gray-400">
               Years
