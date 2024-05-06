@@ -7,7 +7,7 @@ function Header() {
     <header className="flex justify-between  px-10 h-[7rem] items-center shadow-sm mb-4">
     <div className="text-left flex items-center justify-center">
       <div>
-      <h1 className="mr-3 text-lg font-semibold"><Link to="/"><img className="h-[90px] w-90px] object-cover mx-8" src="./Header-logo.png" alt="" /></Link></h1>
+      <h1 className="mr-3 text-lg font-semibold"><Link to="/create"><img className="h-[90px] w-90px] object-cover mx-8" src="./Header-logo.png" alt="" /></Link></h1>
       </div>  
       <div className="text-[17px] font-normal ml-5">
               <h3>Resume</h3>

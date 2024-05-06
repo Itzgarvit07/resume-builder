@@ -9,6 +9,7 @@ import SkillsAndProf from "./SkillsAndProf";
 import WorkExp from "./WorkExp";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { createContext,useEffect,useState,useContext } from "react";
+import Loginpage from "./Loginpage";
 export const inputField = createContext()
 function Main() {
 const [name,setName] = useState("")
@@ -38,9 +39,19 @@ const [formData, setFormData] = useState({
       path: "/",
       element: (
         <>
-          <Header /> <Home />
+          {/* <Header /> <Home /> */}
+          <Loginpage/>
         </>
       ),
+    },
+    {
+      path:"/create",
+      element:(
+        
+        <>
+        <Header/> <Home/>
+        </>
+      )
     },
     {
       path: "/new",

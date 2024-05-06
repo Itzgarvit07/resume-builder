@@ -10,7 +10,7 @@ function HeaderInner() {
     <>
     <aside className="header-inner h-screen w-[21%] p-4 bg-slate-200">
       <h1 className="mb-5">
-        <NavLink to="/">Resume Builder</NavLink>
+        <NavLink to="/create">Resume Builder</NavLink>
       </h1>
       <ul>
         <li>
